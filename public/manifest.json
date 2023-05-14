@@ -1,0 +1,17 @@
+{
+  "name": "chatgpt-up-down-key-input-history",
+  "description": "When you press the up or down key in chatgpt, a list of previously entered strings is applied to input.",
+  "version": "0.1",
+  "manifest_version": 3,
+  "action": {},
+  "permissions": [],
+  "background": {},
+  "content_scripts": [
+    {
+      "js": ["content.js"],
+      "matches": [
+        "https://chat.openai.com/*/*"
+      ]
+    }
+  ]
+}
