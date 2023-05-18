@@ -28,15 +28,15 @@ const getTextarea = (): void => {
 		| undefined;
 };
 
-const inputTextList: string[] = [];
+let inputTextList: string[] = [];
 let currentIndex = 0;
 let currentInputText = "";
 
 // inputTextListをユニークな配列にしつつ、currentIndexの整合性も保つ
-const uniqueInputTextList = (inputTextList: string[]): void => {
-	if (inputTextList.length <= 0) return;
-	const currentText = inputTextList[currentIndex];
-	const uniqueInputTextList = [...new Set(inputTextList)];
+const uniqueInputTextList = (inputTextList_: string[]): void => {
+	if (inputTextList_.length <= 0) return;
+	const currentText = inputTextList_[currentIndex];
+	const uniqueInputTextList = [...new Set(inputTextList_)];
 	currentIndex = uniqueInputTextList.indexOf(currentText);
 	inputTextList = uniqueInputTextList;
 };
