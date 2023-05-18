@@ -2,5 +2,10 @@
   "cSpell.words": [
     "chatgpt",
     "crxjs"
-  ]
+  ],
+  "editor.defaultFormatter": "rome.rome",
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "editor.formatOnType": true,
+  "editor.codeActionsOnSave": { "quickfix.rome": true }
 }
