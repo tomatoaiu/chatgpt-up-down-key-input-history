@@ -5,7 +5,8 @@
 	"main": "src/content.ts",
 	"scripts": {
 		"build": "npm run clean && cp -r ./public ./dist && npx swc ./src/content.ts -o ./dist/content.js",
-		"clean": "rm -rf dist"
+		"clean": "rm -rf dist",
+		"zip": "zip -r ./dist.zip ./dist"
 	},
 	"keywords": [],
 	"author": "",

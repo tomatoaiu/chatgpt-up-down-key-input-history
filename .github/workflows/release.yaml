@@ -1,0 +1,31 @@
+name: release
+
+on:
+  push:
+    branches-ignore:
+      - '**'
+    tags:
+      - 'v**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - uses: pnpm/action-setup@v2.2.4
+        with:
+          version: 8.5.1
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm run build
+      - uses: montudor/action-zip@v1
+        with:
+          args: zip -qq -r ${GITHUB_REF#refs/tags/v} ./dist
+      - uses: mnao305/chrome-extension-upload@v4.0.1
+        with:
+          file-path: dist/file.zip
+          extension-id: hogefuga(extension id)
+          client-id: ${{ secrets.CLIENT_ID }}
+          client-secret: ${{ secrets.CLIENT_SECRET }}
+          refresh-token: ${{ secrets.REFRESH_TOKEN }}

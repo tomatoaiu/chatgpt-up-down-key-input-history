@@ -7,6 +7,7 @@ When you press the up or down key in chatgpt, a list of previously entered strin
 ## Build
 
 ```shell
+pnpm i
 npm run build
 ```
 
