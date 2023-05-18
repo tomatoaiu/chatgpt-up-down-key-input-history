@@ -6,9 +6,15 @@ When you press the up or down key in chatgpt, a list of previously entered strin
 
 ## Build
 
+pre-requires
+
+- node.js
+- pnpm
+
 ```shell
 pnpm i
 npm run build
+# access chrome://extensions/
 ```
 
 ## TODO
